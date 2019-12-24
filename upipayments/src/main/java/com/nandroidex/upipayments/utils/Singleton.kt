@@ -15,6 +15,10 @@ class Singleton {
     val isListenerRegistered: Boolean
         get() = instance!!.listener != null
 
+    fun detachListener() {
+        instance!!.listener = null
+    }
+
     companion object {
         private var instance: Singleton? = null
         fun getInstance(): Singleton? {

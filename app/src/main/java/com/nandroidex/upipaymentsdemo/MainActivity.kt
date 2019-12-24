@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), PaymentStatusListener {
 
+    private lateinit var upiPayment: UPIPayment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
     }
 
     private fun startUpiPayment() {
-        val upiPayment: UPIPayment = UPIPayment.Builder()
+        upiPayment = UPIPayment.Builder()
             .with(this@MainActivity)
             .setPayeeVpa(etVPA.text.toString())
             .setPayeeName(etName.text.toString())
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
 
     override fun onTransactionCompleted(transactionDetails: TransactionDetails?) {
         Log.d("TransactionDetails", transactionDetails.toString())
+        upiPayment.detachListener()
     }
 
     override fun onTransactionSuccess() {

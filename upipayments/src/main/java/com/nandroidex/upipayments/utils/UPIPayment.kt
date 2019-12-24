@@ -20,9 +20,12 @@ class UPIPayment private constructor(
     }
 
     fun setPaymentStatusListener(mListener: PaymentStatusListener) {
-        val singleton =
-            getInstance()
+        val singleton = getInstance()
         singleton!!.setListener(mListener)
+    }
+
+    fun detachListener() {
+        getInstance()?.detachListener()
     }
 
     private fun isPackageInstalled(
