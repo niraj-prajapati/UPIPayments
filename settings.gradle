@@ -1,0 +1,2 @@
+include ':app', ':upipayments'
+rootProject.name='UPI Payments Demo'

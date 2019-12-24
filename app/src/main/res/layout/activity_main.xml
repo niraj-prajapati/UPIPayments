@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/_16sdp"
+        android:text="@string/receive_upi_payment"
+        android:textSize="@dimen/_18ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etVPA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_vpa"
+        android:inputType="text"
+        android:lines="1"
+        android:text="8200447980@okbizaxis"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_name"
+        android:inputType="text"
+        android:lines="1"
+        android:text="NAndroidEx"
+        app:layout_constraintTop_toBottomOf="@+id/etVPA" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etPayeeMerchantCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_payee_merchant_code"
+        android:inputType="text"
+        android:lines="1"
+        android:text="001"
+        app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etTxnId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_txn_id"
+        android:inputType="text"
+        android:lines="1"
+        app:layout_constraintTop_toBottomOf="@+id/etPayeeMerchantCode" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etTxnRefId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_ref_id"
+        android:inputType="text"
+        android:lines="1"
+        app:layout_constraintTop_toBottomOf="@+id/etTxnId" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_description"
+        android:inputType="text"
+        android:lines="1"
+        android:text="test transaction"
+        app:layout_constraintTop_toBottomOf="@+id/etTxnRefId" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_amount"
+        android:inputType="numberSigned"
+        android:lines="1"
+        android:text="1.00"
+        app:layout_constraintTop_toBottomOf="@+id/etDescription" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnPayUsing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_16sdp"
+        android:text="@string/pay_using"
+        app:layout_constraintTop_toBottomOf="@+id/etAmount" />
+</androidx.constraintlayout.widget.ConstraintLayout>

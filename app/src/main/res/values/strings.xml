@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">UPI Payments Demo</string>
+    <string name="receive_upi_payment">Receive UPI Payment</string>
+    <string name="enter_vpa">Enter VPA</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_payee_merchant_code">Enter Payee Merchant Code (Optional)</string>
+    <string name="enter_txn_id">Enter Txn ID</string>
+    <string name="enter_ref_id">Enter Ref ID</string>
+    <string name="enter_description">Enter Description</string>
+    <string name="enter_amount">Enter Amount</string>
+</resources>
