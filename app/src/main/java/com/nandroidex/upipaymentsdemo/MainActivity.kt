@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
             .with(this@MainActivity)
             .setPayeeVpa(etVPA.text.toString())
             .setPayeeName(etName.text.toString())
-            .setPayeeMerchantCode(etPayeeMerchantCode.text.toString())
             .setTransactionId(etTxnId.text.toString())
             .setTransactionRefId(etTxnRefId.text.toString())
             .setDescription(etDescription.text.toString())
