@@ -33,7 +33,7 @@ Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.NAndroidEx:UPIPayments:1.1.1'
+    implementation 'com.github.NAndroidEx:UPIPayments:1.1.3'
 }
 ```
 
