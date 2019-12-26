@@ -10,7 +10,7 @@ I have developed this Android library to easily implement UPI Payment Integratio
 - Before using it, make sure that your device is having atleast one UPI app installed. Otherwise it will unable to process the payments.
 - This API is in beta, there are lot of improvements are still needed.
 
-![](https://i.ibb.co/V2JLC85/UPIPayments.jpg)
+![](https://i.imgur.com/AaZNzlM.jpg)
 
 <h2>How to get?</h2>
 
