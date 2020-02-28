@@ -13,74 +13,27 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="@dimen/_16sdp"
-        android:text="@string/receive_upi_payment"
+        android:text="@string/spin_the_wheel_of_fortune"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etVPA"
+    <com.bluehomestudio.luckywheel.LuckyWheel
+        android:id="@+id/lwv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/enter_vpa"
-        android:inputType="text"
-        android:lines="1"
-        android:text="8200447980@okbizaxis"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_name"
-        android:inputType="text"
-        android:lines="1"
-        android:text="NAndroidEx"
-        app:layout_constraintTop_toBottomOf="@+id/etVPA" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etTxnId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_txn_id"
-        android:inputType="text"
-        android:lines="1"
-        app:layout_constraintTop_toBottomOf="@+id/etName" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etTxnRefId"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_ref_id"
-        android:inputType="text"
-        android:lines="1"
-        app:layout_constraintTop_toBottomOf="@+id/etTxnId" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_description"
-        android:inputType="text"
-        android:lines="1"
-        android:text="test transaction"
-        app:layout_constraintTop_toBottomOf="@+id/etTxnRefId" />
-
-    <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/etAmount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/enter_amount"
-        android:inputType="numberSigned"
-        android:lines="1"
-        android:text="1.00"
-        app:layout_constraintTop_toBottomOf="@+id/etDescription" />
+        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnPayUsing"
+        android:id="@+id/btnClaim"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:enabled="false"
         android:padding="@dimen/_16sdp"
-        android:text="@string/pay_using"
-        app:layout_constraintTop_toBottomOf="@+id/etAmount" />
+        android:text="@string/claim_prize"
+        app:layout_constraintTop_toBottomOf="@+id/lwv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
