@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">UPI Payments Demo</string>
-    <string name="receive_upi_payment">Receive UPI Payment</string>
-    <string name="enter_vpa">Enter VPA</string>
-    <string name="enter_name">Enter Name</string>
-    <string name="enter_payee_merchant_code">Enter Payee Merchant Code (Optional)</string>
-    <string name="enter_txn_id">Enter Txn ID</string>
-    <string name="enter_ref_id">Enter Ref ID</string>
-    <string name="enter_description">Enter Description</string>
-    <string name="enter_amount">Enter Amount</string>
+    <string name="spin_the_wheel_of_fortune">Spin the wheel of fortune</string>
+    <string name="vpa">8200447980@okbizaxis</string>
+    <string name="payee">NAndroidEx</string>
+    <string name="transaction_description">test transaction</string>
+    <string name="amount">10.00</string>
+    <string name="claim_prize">Claim prize</string>
 </resources>
