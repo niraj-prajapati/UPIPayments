@@ -1,15 +1,17 @@
 package com.nandroidex.upipaymentsdemo
 
-import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bluehomestudio.luckywheel.WheelItem
+import com.labters.lottiealertdialoglibrary.ClickListener
+import com.labters.lottiealertdialoglibrary.DialogTypes
+import com.labters.lottiealertdialoglibrary.LottieAlertDialog
 import com.nandroidex.upipayments.listener.PaymentStatusListener
 import com.nandroidex.upipayments.models.TransactionDetails
 import com.nandroidex.upipayments.utils.UPIPayment
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity(), PaymentStatusListener {
 
@@ -19,71 +21,8 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        setUpWheel()
-
-        btnClaim.setOnClickListener {
+        btnBuyNow.setOnClickListener {
             startUpiPayment()
-        }
-    }
-
-    private fun setUpWheel() {
-        val wheelItems: MutableList<WheelItem> = ArrayList()
-
-        wheelItems.add(
-            WheelItem(
-                Color.LTGRAY,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name),
-                "text 1"
-            )
-        )
-
-        wheelItems.add(
-            WheelItem(
-                Color.BLUE,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name),
-                "text 2"
-            )
-        )
-
-        wheelItems.add(
-            WheelItem(
-                Color.BLACK,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name),
-                "text 3"
-            )
-        )
-
-        wheelItems.add(
-            WheelItem(
-                Color.GRAY,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name)
-                , "text 4"
-            )
-        )
-
-        wheelItems.add(
-            WheelItem(
-                Color.RED,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name),
-                "text 5"
-            )
-        )
-
-        wheelItems.add(
-            WheelItem(
-                Color.BLACK,
-                BitmapFactory.decodeResource(resources, R.drawable.ic_action_name),
-                "text 6"
-            )
-        )
-
-        lwv.addWheelItems(wheelItems)
-        lwv.setTarget((0..5).random())
-
-        lwv.setLuckyWheelReachTheTarget {
-            lwv.setTarget((0..5).random())
-            lwv.isEnabled = false
-            btnClaim.isEnabled = true
         }
     }
 
@@ -110,13 +49,23 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
     }
 
     override fun onTransactionCompleted(transactionDetails: TransactionDetails?) {
-        val status = transactionDetails?.status
-        Toast.makeText(this, status, Toast.LENGTH_SHORT).show()
+        val approvalRefNo = transactionDetails?.approvalRefNo
+        val alertDialog: LottieAlertDialog =
+            LottieAlertDialog.Builder(this, DialogTypes.TYPE_SUCCESS)
+                .setTitle("Good job!")
+                .setDescription("UPI ID : $approvalRefNo")
+                .setNoneText("Okay")
+                .setNoneTextColor(Color.WHITE)
+                .setNoneButtonColor(Color.parseColor("#00C885"))
+                .setNoneListener(object : ClickListener {
+                    override fun onClick(dialog: LottieAlertDialog) {
+                        dialog.dismiss()
+                    }
+                })
+                .build()
+        alertDialog.setCancelable(false)
+        alertDialog.show()
         upiPayment.detachListener()
-        if (status.equals("success", true) || status.equals("submitted", true)) {
-            lwv.isEnabled = true
-            btnClaim.isEnabled = false
-        }
     }
 
     override fun onTransactionSuccess() {

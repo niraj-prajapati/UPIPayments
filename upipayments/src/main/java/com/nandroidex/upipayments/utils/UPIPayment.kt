@@ -45,7 +45,7 @@ class UPIPayment private constructor(
             !isPackageInstalled(mPayment.defaultPackage!!, mActivity.packageManager)
         } else {
             Log.w(
-                "Unpecified", "Default app is not speified. Specify it using " +
+                "UnSpecified", "Default app is not Specified. Specify it using " +
                         "'setDefaultApp()' method of Builder class"
             )
             false

@@ -25,12 +25,12 @@
         android:id="@+id/btnBuyNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00C885"
+        android:backgroundTint="@color/green"
         android:padding="@dimen/_16sdp"
         android:text="@string/test_transaction"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/tvInfo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
