@@ -49,14 +49,20 @@ class MainActivity : AppCompatActivity(), PaymentStatusListener {
     }
 
     override fun onTransactionCompleted(transactionDetails: TransactionDetails?) {
+        val status = transactionDetails?.status
+        val success = status.equals("success", true) || status.equals("submitted", true)
         val approvalRefNo = transactionDetails?.approvalRefNo
+        val dialogType = if (success) DialogTypes.TYPE_SUCCESS else DialogTypes.TYPE_ERROR
+        val title = if (success) "Good job!" else "Oops!"
+        val description = if (success) "UPI ID : $approvalRefNo" else "Transaction Failed/Cancelled"
+        val buttonColor = if (success) Color.parseColor("#00C885") else Color.parseColor("#FB2C56")
         val alertDialog: LottieAlertDialog =
-            LottieAlertDialog.Builder(this, DialogTypes.TYPE_SUCCESS)
-                .setTitle("Good job!")
-                .setDescription("UPI ID : $approvalRefNo")
+            LottieAlertDialog.Builder(this, dialogType)
+                .setTitle(title)
+                .setDescription(description)
                 .setNoneText("Okay")
                 .setNoneTextColor(Color.WHITE)
-                .setNoneButtonColor(Color.parseColor("#00C885"))
+                .setNoneButtonColor(buttonColor)
                 .setNoneListener(object : ClickListener {
                     override fun onClick(dialog: LottieAlertDialog) {
                         dialog.dismiss()
