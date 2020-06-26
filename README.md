@@ -33,11 +33,13 @@ Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.NAndroidEx:UPIPayments:1.1.3'
+    implementation 'com.github.niraj-prajapati:UPIPayments:1.1.4'
 }
 ```
 
 <h2>How to use it?</h2>
+
+<b>For JAVA implementation, see [MainActivity2.java](app/src/main/java/com/nandroidex/upipaymentsdemo/MainActivity2.java)</b>
 
 <b>Implement PaymentStatusListener and its methods</b>
 
